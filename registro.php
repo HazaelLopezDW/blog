@@ -24,7 +24,19 @@
                             </h3>
                         </div>
                         <div class="panel-body">
-                            
+                            <p class="text-justify">
+                                Para uniter al blog de javaDevone introducce un 
+                                nombre de usuario tu email y una contraseña el 
+                                email que escribas tiene que ser real ya que lo 
+                                nesisitaras para gestionar tu cuenta te 
+                                recomendamos una contraseña que contega letras 
+                                numero y simbolos
+                            </p>
+                            <br>
+                            <a href="#">¿Ya tienes cuenta?</a>
+                            <br><br>
+                            <a href="#">¿Olvidaste tu cuenta?</a>
+                            <br><br>
                         </div>
                     </div>
                 </div>
