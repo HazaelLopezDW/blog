@@ -1,6 +1,10 @@
 <?php
     include_once 'app/Config.inc.php';
     
+    if(isset($_POST['enviar'])){
+        
+    }
+    
     $titulo = "Registro";
     
     include_once 'plantillas/documento-inicio.inc.php';
