@@ -12,7 +12,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="<?php echo SERVIDOR; ?>">JavaDevOne</a>
+            <a href="<?php echo SERVIDOR; ?>" class="navbar-brand">JavaDevOne</a>
         </div>
         <div id="navbar" class="navbar navbar-collapse">
             <ul class="nav navbar-nav">
