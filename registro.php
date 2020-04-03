@@ -52,7 +52,15 @@
                             </h3>
                         </div>
                         <div class="panel-body">
-                            
+                            <form role="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                <?php
+                                    if(isset($_POST['enviar'])){
+                                        include_once 'plantillas/registro-validado.inc.php';
+                                    }else{
+                                        include_once 'plantillas/registro-vacio.inc.php';
+                                    }
+                                ?>
+                            </form>
                         </div>
                     </div>
                 </div>
