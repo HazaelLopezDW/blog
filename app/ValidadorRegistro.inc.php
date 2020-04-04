@@ -24,7 +24,7 @@
             $this -> error_nombre = $this -> validar_nombre($nombre);
             $this -> error_email = $this -> validar_email($email);
             $this -> error_clave1 = $this -> validar_clave1($clave1);
-            $this -> error_clave2 = $this -> validar_clave2($clave2);
+            $this -> error_clave2 = $this -> validar_clave2($clave1, $clave2);
             
             if($this -> error_clave1 === "" && $this -> error_clave2 === ""){
                 $this -> clave = $clave1;
@@ -39,7 +39,7 @@
             }
         }
         
-        public static function validar_nombre($nombre){
+        public function validar_nombre($nombre){
             if(!$this -> variable_valida($nombre)){
                 return "Debes llenar el campo nombre";
             }else{
@@ -57,7 +57,7 @@
             return "";
         }
         
-        public static function validar_email($email){
+        public function validar_email($email){
             if(!$this -> variable_valida($email)){
                 return "Debes llenar el campo email";
             }else{
@@ -67,7 +67,7 @@
             return "";
         }
         
-        public static function validar_clave1($clave1){
+        public function validar_clave1($clave1){
             if(!$this -> variable_valida($clave1)){
                 return "Debes llenar el campo contraseña";
             }
@@ -75,7 +75,7 @@
             return "";
         }
         
-        public static function validar_clave2($clave1, $clave2){
+        public function validar_clave2($clave1, $clave2){
             if(!$this -> variable_valida($clave1)){
                 return "Primero debes llenar el campo contraseña ";
             }
