@@ -26,5 +26,38 @@
                     print "ERROR:" . $ex -> getMessage() . "<br>";
                 }
             }
+            return $total_usuarios;
+        }
+        
+        
+        public static function obtener_numero_usuarios($conexion){
+            $total_usuarios = null;
+            
+            if(isset($conexion)){
+                try{
+                    
+                    $sql = "SELECT COUNT(*) as total FROM usuarios";
+                    $sentencia = $conexion -> prepare($sql);
+                    $sentencia -> execute();
+                    $resultado = $sentencia -> fetch();
+                    
+                    $total_usuarios = $resultado['total'];
+                } catch (PDOException $ex) {
+                    print "ERROR:" . $ex -> getMessage() . "<br>";
+                }
+            }
+            return $total_usuarios;
         }
     }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
