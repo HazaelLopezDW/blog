@@ -23,7 +23,7 @@
             if(isset(self::$conexion)){
                 try{
                     self::$conexion = null;
-                    die();
+                    print "Conexion cerrada <br>";
                 } catch (PDOException $ex) {
                     print "ERROR:" . $ex -> getMessage() . "<br>";
                 }
