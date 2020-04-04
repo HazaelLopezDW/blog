@@ -12,7 +12,7 @@
                     self::$conexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     self::$conexion -> exec("SET CHARACTER SET utf8");
                     
-                    print "Conexion abierta <br>";
+                    // print "Conexion abierta <br>";
                 } catch (PDOException $ex) {
                     print "ERROR:" . $ex -> getMessage() . "<br>";
                 }
@@ -23,7 +23,7 @@
             if(isset(self::$conexion)){
                 try{
                     self::$conexion = null;
-                    print "Conexion cerrada <br>";
+                    // print "Conexion cerrada <br>";
                 } catch (PDOException $ex) {
                     print "ERROR:" . $ex -> getMessage() . "<br>";
                 }
