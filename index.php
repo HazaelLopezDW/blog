@@ -67,6 +67,10 @@
                         </div>
                         <div class="panel-body">
                             <p>Aun no hay entradas que mostrar</p>
+                            <?php
+                                Conexion::abrir_conexion();
+                                Conexion::cerrar_conexion();
+                            ?>
                         </div>
                     </div>
                 </div>
