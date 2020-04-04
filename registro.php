@@ -2,9 +2,11 @@
     include_once 'app/Config.inc.php';
     include_once 'app/Conexion.inc.php';
     include_once 'app/RepositorioUsuario.inc.php';
+    include_once 'app/ValidadorRegistro.inc.php';
     
     if(isset($_POST['enviar'])){
         
+        $validador = new ValidadorRegistro($_POST['nombre'], $_POST['email'], $_POST['clave1'], $_POST['clave2']);
     }
     
     $titulo = "Registro";
