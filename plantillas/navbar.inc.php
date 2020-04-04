@@ -1,5 +1,7 @@
 <?php
-
+    Conexion::abrir_conexion();
+    $total = RepositorioUsuario::obtener_numero_usuarios(Conexion::obtener_conexion());
+    Conexion::cerrar_conexion();
 ?>
 
 <nav class="navbar navbar-default navbar-static-top">
@@ -21,7 +23,7 @@
                 <li><a href="<?php echo RUTA_AUTORES; ?>"><span class="glyphicon glyphicon-education" data-hidden="true"></span> Autores</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="<?php echo RUTA_USUARIOS; ?>"><span class="glyphicon glyphicon-user" data-hidden="true"></span> #</a></li>
+                <li><a href="<?php echo RUTA_USUARIOS; ?>"><span class="glyphicon glyphicon-user" data-hidden="true"></span> <?php echo $total; ?></a></li>
                 <li><a href="<?php echo RUTA_LOGIN; ?>"><span class="glyphicon glyphicon-log-in" data-hidden="true"></span> Iniciar Sesión</a></li>
                 <li><a href="<?php echo RUTA_REGISTRO; ?>"><span class="glyphicon glyphicon-plus" data-hidden="true"></span> Registro</a></li>
             </ul>
