@@ -1,5 +1,6 @@
 <?php
     include_once 'app/Config.inc.php';
+    include_once 'app/Conexion.inc.php';
     
     $titulo = "blog De JavaDevOne";
     
