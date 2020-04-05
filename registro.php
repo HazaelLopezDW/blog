@@ -16,7 +16,8 @@
                     PASSWORD_DEFAULT), "", "");
             
             if(RepositorioUsuario::insertar_usuario(Conexion::obtener_conexion(), $usuario)){
-                echo "Usuarios insertado <br>";
+                // Redireccionamos a la pagina de bienvenida
+                Redireccion::redirigir(RUTA_REGISTRO_CORECCTO."?nombre=".$usuario -> obtener_nombre());
             }
         }
         
