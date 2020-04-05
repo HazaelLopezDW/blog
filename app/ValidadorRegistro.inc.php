@@ -155,7 +155,7 @@ include_once "RepositorioUsuario.inc.php";
         
         
         public function registro_valido(){
-            if($this -> error_nombre() === "" && $this -> error_email() === "" && $this -> error_clave1() === "" && $this -> error_clave2() === "" ){
+            if($this -> error_nombre === "" && $this -> error_email === "" && $this -> error_clave1 === "" && $this -> error_clave2 === ""){
                 return true;
             }else{
                 return false;
