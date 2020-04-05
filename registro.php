@@ -3,6 +3,7 @@
     include_once 'app/Conexion.inc.php';
     include_once 'app/RepositorioUsuario.inc.php';
     include_once 'app/ValidadorRegistro.inc.php';
+    include_once 'app/Usuario.inc.php';
     
     if(isset($_POST['enviar'])){
         Conexion::abrir_conexion();
@@ -10,7 +11,13 @@
         $validador = new ValidadorRegistro($_POST['nombre'], $_POST['email'], $_POST['clave1'], $_POST['clave2'], Conexion::obtener_conexion());
         
         if($validador -> registro_valido()){
-            echo "El registro es valido";
+            // Tememos que insertar el usuario 
+            $usuario = new Usuario("", $validador -> obtener_nombre(), $validador -> obtener_email(), password_hash($validador -> obtener_clave(),
+                    PASSWORD_DEFAULT), "", "");
+            
+            if(RepositorioUsuario::insertar_usuario(Conexion::obtener_conexion(), $usuario)){
+                echo "Usuarios insertado <br>";
+            }
         }
         
         Conexion::cerrar_conexion();
