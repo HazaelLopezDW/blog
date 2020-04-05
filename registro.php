@@ -5,8 +5,15 @@
     include_once 'app/ValidadorRegistro.inc.php';
     
     if(isset($_POST['enviar'])){
+        Conexion::abrir_conexion();
         
-        $validador = new ValidadorRegistro($_POST['nombre'], $_POST['email'], $_POST['clave1'], $_POST['clave2']);
+        $validador = new ValidadorRegistro($_POST['nombre'], $_POST['email'], $_POST['clave1'], $_POST['clave2'], Conexion::obtener_conexion());
+        
+        if($validador -> registro_correcto()){
+            
+        }
+        
+        Conexion::cerrar_conexion();
     }
     
     $titulo = "Registro";
