@@ -48,6 +48,44 @@
             }
             return $total_usuarios;
         }
+        
+        public static function nombre_existe($conexion, $nombre){
+            $nombre_existe = false;
+            
+            if(isset($conexion)){
+                try{
+                    
+                    $sql = "SELECT * FROM usuarios WHERE nombre = :nombre";
+                    $sentencia = $conexion -> prepare($sql);
+                    $sentencia -> bindParam(":nombre", $nombre, PDO::PARAM_STR);
+                    $sentencia -> execute();
+                    
+                    $nombre_existe = $sentencia -> fetchAll();
+                } catch (PDOException $ex) {
+                    print "ERROR:" . $ex -> getMessage() . "<br>";
+                }
+            }
+            return $nombre_existe;
+        }
+        
+        public static function email_existe($conexion, $email){
+            $email_existe = false;
+            
+            if(isset($conexion)){
+                try{
+                    
+                    $sql = "SELECT * FROM usuarios WHERE email = :email";
+                    $sentencia = $conexion -> prepare($sql);
+                    $sentencia -> bindParam(":email", $email, PDO::PARAM_STR);
+                    $sentencia -> execute();
+                    
+                    $email_existe = $sentencia -> fetchAll();
+                } catch (PDOException $ex) {
+                    print "ERROR:" . $ex -> getMessage() . "<br>";
+                }
+            }
+            return $email_existe;
+        }
     }
 
     
