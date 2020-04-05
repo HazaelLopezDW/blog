@@ -13,7 +13,7 @@
         private $error_clave1;
         private $error_clave2;
         
-        public function __construct($nombre, $email, $clave1, $clave2){
+        public function __construct($nombre, $email, $clave1, $clave2, $conexion){
             $this -> aviso_inicio = "<br><div role='alert' class='alert alert-danger'>";
             $this -> aviso_cierre = "</div>";
             
@@ -21,8 +21,8 @@
             $this -> email = "";
             $this -> clave = "";
             
-            $this -> error_nombre = $this -> validar_nombre($nombre);
-            $this -> error_email = $this -> validar_email($email);
+            $this -> error_nombre = $this -> validar_nombre($conexion, $nombre);
+            $this -> error_email = $this -> validar_email($conexion, $email);
             $this -> error_clave1 = $this -> validar_clave1($clave1);
             $this -> error_clave2 = $this -> validar_clave2($clave1, $clave2);
             
@@ -39,7 +39,7 @@
             }
         }
         
-        public function validar_nombre($nombre){
+        public function validar_nombre($conexion, $nombre){
             if(!$this -> variable_valida($nombre)){
                 return "Debes llenar el campo nombre";
             }else{
@@ -54,14 +54,22 @@
                 return "El nombre tiene que ser menor a 40 caracteres";
             }
             
+            if(RepositorioUsuario::nombre_existe($conexion, $nombre)){
+                return "El nombre $nombre ya existe, por favor Ingresa uno nuevo";
+            }
+            
             return "";
         }
         
-        public function validar_email($email){
+        public function validar_email($conexion, $email){
             if(!$this -> variable_valida($email)){
                 return "Debes llenar el campo email";
             }else{
                 $this -> email = $email;
+            }
+            
+            if(RepositorioUsuario::email_existe($conexion, $email)){
+                return "El email $email ya existe, por favor Ingresa uno nuevo";
             }
             
             return "";
