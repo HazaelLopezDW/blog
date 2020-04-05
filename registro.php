@@ -9,8 +9,8 @@
         
         $validador = new ValidadorRegistro($_POST['nombre'], $_POST['email'], $_POST['clave1'], $_POST['clave2'], Conexion::obtener_conexion());
         
-        if($validador -> registro_correcto()){
-            
+        if($validador -> registro_valido()){
+            echo "El registro es valido";
         }
         
         Conexion::cerrar_conexion();
