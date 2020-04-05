@@ -1,4 +1,6 @@
 <?php 
+include_once "RepositorioUsuario.inc.php";
+
     class ValidadorRegistro{
         
         private $aviso_inicio;
