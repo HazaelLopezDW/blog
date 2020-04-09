@@ -1,4 +1,7 @@
 <?php
+include_once 'app/ControlSesion.inc.php';
+include_once 'app/Config.inc.php';
+
     Conexion::abrir_conexion();
     $total = RepositorioUsuario::obtener_numero_usuarios(Conexion::obtener_conexion());
     Conexion::cerrar_conexion();
