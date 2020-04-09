@@ -4,6 +4,23 @@
     include_once 'app/RepositorioUsuario.inc.php';
     include_once 'app/ValidadorRegistro.inc.php';
     include_once 'app/Usuario.inc.php';
+    include_once 'app/ValidadorLogin.inc.php';
+    
+    if(isset($_POST['login'])){
+        Conexion::abrir_conexion();
+        
+        $validador = new ValidadorLogin($_POST["email"], $_POST["clave"], Conexion::obtener_conexion());
+        
+        if($validador -> obtener_error() === "" && !is_null($validador -> obtener_usuario())){
+            // Iniciar la session
+            // Madariamos al usuario a index
+            echo "Inicio de sesión Ok";
+        }else{
+            echo 'Inicio de sesion Fallo';
+        }
+        
+        Conexion::cerrar_conexion();
+    }
     
     $titulo = "Login";
     
@@ -27,11 +44,24 @@
                         <h2>Introduce tus datos</h2>
                         <div class="form-group">
                             <label for="email" class="sr-only">Email</label>
-                            <input id="email" type="email" class="form-control" placeholder="Email Del usuairo" name="email" required="" autofocus="">
+                            <input id="email" type="email" class="form-control" placeholder="Email Del usuairo" name="email" 
+                                   <?php
+                                        if(isset($_POST['login']) && isset($_POST['email']) && !empty($_POST['email'])){
+                                            echo "value='" . $_POST['email'] . "'";
+                                        }
+                                   ?>
+                                   required="" autofocus="">
                             <br>
                             <label for="clave" class="sr-only">Contraseña</label>
-                            <input id="clave" type="password" class="form-control" placeholder="Contraseña de usuario" name="clave" required="">
+                            <input id="clave" type="password" class="form-control" placeholder="Contraseña de usuario" name="clave" 
+                                   
+                                   required="">
                             <br>
+                            <?php
+                                if(isset($_POST['login'])){
+                                    $validador -> mostrar_error();
+                                }
+                            ?>
                             <button type="submit" class="btn btn-lg btn-block btn-primary" name="login">Iniciar Sesión</button>
                         </div>
                     </form>
