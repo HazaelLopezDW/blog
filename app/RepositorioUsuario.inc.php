@@ -111,7 +111,7 @@
             return $insertar_usuario;
         }
         
-        public static function obtener_usuarios_por_email($conexion, $email){
+        public static function obtener_usuario_por_email($conexion, $email){
             $usuario = null;
             if(isset($conexion)){
                 try{
