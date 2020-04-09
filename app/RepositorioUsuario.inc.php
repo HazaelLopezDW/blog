@@ -105,10 +105,34 @@
                     
                     $insertar_usuario = $sentencia -> execute();
                 } catch (PDOException $ex) {
-                    print "ERROR: Walter Hazael" . $ex -> getMessage() . "<br>";
+                    print "ERROR:" . $ex -> getMessage() . "<br>";
                 }
             }
             return $insertar_usuario;
+        }
+        
+        public static function obtener_usuarios_por_email($conexion, $email){
+            $usuario = null;
+            if(isset($conexion)){
+                try{
+                    include_once "Usuario.inc.php";
+                    
+                    $sql = "SELECT * FROM usuarios WHERE email = :email";
+                    $sentencia = $conexion -> prepare($sql);
+                    $sentencia -> bindParam(":email", $email, PDO::PARAM_STR);
+                    $sentencia -> execute();
+                    
+                    $resultado = $sentencia -> fetch();
+                    
+                    if(!empty($resultado)){
+                        $usuario = new Usuario($resultado['id'], $resultado['nombre'], $resultado['email'], $resultado['password'], 
+                                $resultado['fecha_registro'], $resultado['activo']);
+                    }
+                } catch (PDOException $ex) {
+                    print "ERROR:" . $ex -> getMessage() . "<br>";
+                }
+            }
+            return $usuario;
         }
     }
 
