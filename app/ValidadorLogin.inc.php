@@ -9,7 +9,7 @@ include_once 'RepositorioUsuario.inc.php';
         public function __construct($email, $clave, $conexion) {
             $this -> error = "";
             
-            if(!$this -> variable_iniciada($email) || !$this -> variable_iniciada($clave)){
+            if(!$this -> variable_valida($email) || !$this -> variable_valida($clave)){
                 $this -> usuario = null;
                 $this -> error = "Debes introducir tu email y tu contraseña";
             }else{
@@ -30,7 +30,7 @@ include_once 'RepositorioUsuario.inc.php';
         }
         
         public function obtener_usuario(){
-            return $this -> usuarios;
+            return $this -> usuario;
         }
         
         public function obtener_error(){
