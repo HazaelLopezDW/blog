@@ -5,6 +5,12 @@
     include_once 'app/ValidadorRegistro.inc.php';
     include_once 'app/Usuario.inc.php';
     include_once 'app/ValidadorLogin.inc.php';
+    include_once 'app/ControlSesion.inc.php';
+    include_once 'app/Redireccion.inc.php';
+    
+    if(ControlSesion::sesion_iniciada()){
+        Redireccion::redirigir(SERVIDOR);
+    }
     
     if(isset($_POST['login'])){
         Conexion::abrir_conexion();
@@ -13,10 +19,9 @@
         
         if($validador -> obtener_error() === "" && !is_null($validador -> obtener_usuario())){
             // Iniciar la session
+            ControlSesion::iniciar_sesion($validador -> obtener_usuario() -> obtener_id(), $validador -> obtener_usuario() -> obtener_nombre());
             // Madariamos al usuario a index
-            echo "Inicio de sesión Ok";
-        }else{
-            echo 'Inicio de sesion Fallo';
+            Redireccion::redirigir(SERVIDOR);
         }
         
         Conexion::cerrar_conexion();
