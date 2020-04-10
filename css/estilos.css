@@ -48,3 +48,11 @@ body{
 .navbar-brand:hover, .navbar-brand:active{
     color: #FDFFFF !important;
 }
+
+.dropdown-menu{
+    background-color: #265c00;
+}
+
+.open > a {
+    background-color: #265c00 !important;
+}
