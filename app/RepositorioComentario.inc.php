@@ -1,7 +1,7 @@
 <?php
-    include_once 'app/Config.inc.php';
-    include_once 'app/Conexion.inc.php';
-    include_once 'app/Comentario.inc.php';
+    include_once 'Config.inc.php';
+    include_once 'Conexion.inc.php';
+    include_once 'Comentario.inc.php';
     
     class RepositorioComentario{
         
