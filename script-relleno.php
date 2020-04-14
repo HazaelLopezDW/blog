@@ -32,10 +32,10 @@
     }
     
     for($comentarios = 0; $comentarios < 100; $comentarios++){
-        $titulo = sa(10);
-        $texto = lorem();
         $autor = rand(1, 100);
         $entrada = rand(1, 100);
+        $titulo = sa(10);
+        $texto = lorem();
         
         $comentario = new Comentario("", $autor, $entrada, $titulo, $texto, "");
         RepositorioComentario::insertar_comentario(Conexion::obtener_conexion(), $comentario);
