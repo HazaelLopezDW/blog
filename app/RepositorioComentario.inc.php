@@ -11,7 +11,7 @@
             $autor_id = $comentario -> obtener_autor_id();
             $entrada_id = $comentario -> obtener_entrada_id();
             $titulo = $comentario -> obtener_titulo();
-            $texto = $comentario -> obtener_password();
+            $texto = $comentario -> obtener_texto();
             
             if(isset($conexion)){
                 try{
