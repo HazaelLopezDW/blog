@@ -10,7 +10,7 @@
             
             $autor_id = $entrada -> obtener_autor_id();
             $titulo = $entrada -> obtener_titulo();
-            $texto = $entrada -> obtener_password();
+            $texto = $entrada -> obtener_texto();
             
             if(isset($conexion)){
                 try{
