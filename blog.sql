@@ -1,11 +1,12 @@
-CREATE DATABASE blog DEFAULT CHARACTER SET utf8;
+CREATE DATABASE blog
+    DEFAULT CHARACTER SET utf8;
 
 USE blog;
 
 CREATE TABLE usuarios(
-    id INT NOT NULL AUTO_INCREMENT UNIQUE,
-    nombre VARCHAR(255) NOT NULL UNIQUE,
-    email VARCHAR(255) NOT NULL UNIQUE,
+    id INT NOT NULL UNIQUE AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL UNIQUE,
+    email VARCHAR(225) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     fecha_registro DATETIME NOT NULL,
     activo TINYINT NOT NULL,
@@ -23,23 +24,22 @@ CREATE TABLE entradas(
     FOREIGN KEY(autor_id)
         REFERENCES usuarios(id)
         ON UPDATE CASCADE
-        ON DELETE RESTRICT
+        ON DELETE RESTRICT 
 );
-
 
 CREATE TABLE comentarios(
     id INT NOT NULL UNIQUE AUTO_INCREMENT,
     autor_id INT NOT NULL,
     entrada_id INT NOT NULL,
-    titulo VARCHAR(255) NOT NULL UNIQUE,
+    titulo VARCHAR(255) NOT NULL,
     texto TEXT CHARACTER SET utf8 NOT NULL,
     fecha DATETIME NOT NULL,
-    PRIMARY KEY(id),
+    PRIMARY KEY (id),
     FOREIGN KEY(autor_id)
         REFERENCES usuarios(id)
         ON UPDATE CASCADE
         ON DELETE RESTRICT,
-    FOREIGN KEY(entrada_id)
+    FOREIGN KEY (entrada_id)
         REFERENCES entradas(id)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
