@@ -2,6 +2,7 @@
     include_once 'app/Config.inc.php';
     include_once 'app/Conexion.inc.php';
     include_once 'app/RepositorioUsuario.inc.php';
+    include_once 'app/EscritorEntradas.inc.php';
     
     $titulo = "blog De JavaDevOne";
     
@@ -60,18 +61,9 @@
             </div>
         </div>
         <div class="col-md-8">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <span class="glyphicon glyphicon-time" data-hidden="true"></span> Ultimas Entradas
-                        </div>
-                        <div class="panel-body">
-                            <p>Aun no hay entradas que mostrar</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           <?php
+                EscritorEntradas::escribir_entradas();
+           ?>
         </div>
     </div>
 </div>

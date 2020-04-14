@@ -35,14 +35,15 @@
             if(isset($conexion)){
                 try{
                     $sql = "SELECT * FROM entradas ORDER BY fecha DESC";
-                    $sentencia = $conexion -> prepare();
+                    $sentencia = $conexion -> prepare($sql);
                     $sentencia -> execute();
                     
                     $resultado = $sentencia -> fetchAll();
-                    
+                   
                     if(count($resultado)){
-                        foreach ($sentencia as $fila){
-                            $entradas[] = new Entradra($fila['id'], $fila['autor_id'], $fila['titulo'], $fila['texto'], $fila['fecha'], $fila['activa']);
+                        
+                        foreach ($resultado as $fila){
+                            $entradas[] = new Entrada($fila['id'], $fila['autor_id'], $fila['titulo'], $fila['texto'], $fila['fecha'], $fila['activa']);
                         }
                     }
                 } catch (PDOException $ex) {
