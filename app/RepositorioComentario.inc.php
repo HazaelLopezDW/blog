@@ -16,7 +16,7 @@
             if(isset($conexion)){
                 try{
                     
-                    $sql = "INSERT INTO comentario(autor_id, titulo, entrada_id, texto, fecha) VALUES(:autor_id, :entrada_id, :titulo, :texto, NOW())";
+                    $sql = "INSERT INTO comentarios(autor_id, titulo, entrada_id, texto, fecha) VALUES(:autor_id, :entrada_id, :titulo, :texto, NOW())";
                     $sentencia = $conexion -> prepare($sql);
                     $sentencia -> bindParam(":autor_id", $autor_id, PDO::PARAM_STR);
                     $sentencia -> bindParam(":entrada_id", $entrada_id, PDO::PARAM_STR);
