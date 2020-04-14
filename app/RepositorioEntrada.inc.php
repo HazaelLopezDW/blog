@@ -28,4 +28,27 @@
             }
             return $insertar_entrada;
         }
+        
+        public static function obtener_todas_por_fecha_descendiente($conexion){
+            $entradas = [];
+            
+            if(isset($conexion)){
+                try{
+                    $sql = "SELECT * FROM entradas ORDER BY fecha DESC";
+                    $sentencia = $conexion -> prepare();
+                    $sentencia -> execute();
+                    
+                    $resultado = $sentencia -> fetchAll();
+                    
+                    if(count($resultado)){
+                        foreach ($sentencia as $fila){
+                            $entradas[] = new Entradra($fila['id'], $fila['autor_id'], $fila['titulo'], $fila['texto'], $fila['fecha'], $fila['activa']);
+                        }
+                    }
+                } catch (PDOException $ex) {
+                    print "ERROR:" . $ex -> getMessage() . "<br>";
+                }
+            }
+            return $entradas;
+        }
     }
