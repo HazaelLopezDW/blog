@@ -39,12 +39,30 @@
                         </strong>
                     </p>
                     <?php
-                        echo nl2br($entrada -> obtener_texto());
+                        echo nl2br(self::resumir_texto($entrada -> obtener_texto()));
                     ?>
                 </div>
             </div>
         </div>
     </div>
 <?php
+        }
+        public static function resumir_texto($texto){
+            $longitud_maxima = 400;
+            
+            $resultado = "";
+            
+            if(strlen($texto) >= $longitud_maxima){
+                /*
+                for($i = 0; $i < $longitud_maxima; $i++){
+                    $resultado .= substr($texto, $i, 1);
+                }
+                */
+                $resultado = substr($texto, 0, $longitud_maxima);
+                $resultado .= "...";
+            }else{
+                $resultado = $texto;
+            }
+            return $resultado;
         }
     }
