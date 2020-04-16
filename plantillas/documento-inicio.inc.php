@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="MetaData para los motores de busqueda">
         
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo RUTA_CSS; ?>bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo RUTA_CSS; ?>estilos.css">
     </head>
     <body>
