@@ -14,3 +14,7 @@
     define("RUTA_LOGIN", SERVIDOR."login.php");
     define("RUTA_REGISTRO", SERVIDOR."registro.php");
     define("RUTA_REGISTRO_CORRECTO", SERVIDOR."registro-correcto.php");
+    
+    //Recursos
+    define("RUTA_CSS", SERVIDOR."/css/");
+    define("RUTA_JS", SERVIDOR."/js/");
