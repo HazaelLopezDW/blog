@@ -38,9 +38,15 @@
                             ?>
                         </strong>
                     </p>
-                    <?php
-                        echo nl2br(self::resumir_texto($entrada -> obtener_texto()));
-                    ?>
+                    <div class="text-justify">
+                        <?php
+                            echo nl2br(self::resumir_texto($entrada -> obtener_texto()));
+                        ?>
+                    </div> 
+                    <br>
+                    <div class="text-center">
+                        <a class="btn btn-primary" href="#" role="button">Seguir leyendo</a>
+                    </div>
                 </div>
             </div>
         </div>
