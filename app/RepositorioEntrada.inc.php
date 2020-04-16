@@ -34,7 +34,7 @@
             
             if(isset($conexion)){
                 try{
-                    $sql = "SELECT * FROM entradas ORDER BY fecha DESC";
+                    $sql = "SELECT * FROM entradas ORDER BY fecha DESC LIMIT 5";
                     $sentencia = $conexion -> prepare($sql);
                     $sentencia -> execute();
                     
