@@ -5,10 +5,6 @@
     include_once 'app/ValidadorRegistro.inc.php';
     include_once 'app/Usuario.inc.php';
     
-    if(isset($_GET['nombre'])){
-        $nombre = $_GET['nombre'];
-    }
-    
     $titulo = "!Registro-Correcto";
     
     include_once 'plantillas/documento-inicio.inc.php';

@@ -18,7 +18,7 @@
             
             if(RepositorioUsuario::insertar_usuario(Conexion::obtener_conexion(), $usuario)){
                 // Redireccionamos a la pagina de bienvenida
-                Redireccion::redirigir(RUTA_REGISTRO_CORRECTO."?nombre=".$usuario -> obtener_nombre());
+                Redireccion::redirigir(RUTA_REGISTRO_CORRECTO."/".$usuario -> obtener_nombre());
             }
         }
         
@@ -76,7 +76,7 @@
                             </h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                            <form role="form" method="post" action="<?php echo RUTA_REGISTRO; ?>">
                                 <?php
                                     if(isset($_POST['enviar'])){
                                         include_once 'plantillas/registro-validado.inc.php';
