@@ -28,7 +28,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="" placeholder="Pudes hacer mas de 100,000 busqueda!!!"> 
+                                <input type="text" class="form-control" name="" placeholder="Pudes hacer mas de <?php echo $total; ?> busqueda!!!"> 
                             </div>
                             <button type="button" class="form-control" name="">Buscar</button>
                         </div>
