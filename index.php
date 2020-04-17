@@ -4,6 +4,8 @@
     $ruta = $componentes_url['path'];
     
     $partes_ruta = explode("/", $ruta);
+    $partes_ruta = array_filter($partes_ruta);
+    $partes_ruta = array_slice($partes_ruta, 0);
     
     /*
     echo "partes_ruta[0] -> " . $partes_ruta[0] . "<br>";
@@ -13,17 +15,34 @@
     echo "partes_ruta[4] -> " . $partes_ruta[4] . "<br>"; 
     */
     
-    if($partes_ruta[2] === "registro"){
-        include_once 'vistas/registro.php';
-    }else if($partes_ruta[2] === "login"){
-        include_once 'vistas/login.php';
-    }else if($partes_ruta[1] === "blog"){
-        include_once 'vistas/home.php';
-    }else{
-        echo "404";
+    $ruta_elegida = "vistas/error404.php" ;
+    
+    if($partes_ruta[0] === "blog"){
+        if(count($partes_ruta) == 1){
+            $ruta_elegida = "vistas/home.php";
+        }else if(count($partes_ruta) == 2){
+            switch ($partes_ruta[1]) {
+                case "login":
+                    $ruta_elegida = "vistas/login.php";
+                    break;
+                
+                case "logout":
+                    $ruta_elegida = "vistas/logout.php";
+                    break;
+                
+                case "registro":
+                    $ruta_elegida = "vistas/registro.php";
+                    break;
+            }
+        }else if(count($partes_ruta) == 3){
+            if($partes_ruta[1] == "registro-correcto"){
+                $nombre = $partes_ruta[2];
+                $ruta_elegida = "vistas/registro-correcto.php";
+            }
+        }
     }
     
-    
+    include_once $ruta_elegida;
     
     /*
     if($partes_ruta[3] === "registro"){
