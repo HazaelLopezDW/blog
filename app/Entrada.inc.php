@@ -3,14 +3,16 @@
         
         private $id;
         private $autor_id;
+        private $url;
         private $titulo;
         private $texto;
         private $fecha;
         private $activa;
         
-        public function __construct($id, $autor_id, $titulo, $texto, $fecha, $activa) {
+        public function __construct($id, $autor_id, $url, $titulo, $texto, $fecha, $activa) {
             $this -> id = $id;
             $this -> autor_id = $autor_id;
+            $this -> url = $url;
             $this -> titulo = $titulo;
             $this -> texto = $texto;
             $this -> fecha = $fecha;
@@ -23,6 +25,10 @@
 
         public function obtener_autor_id() {
             return $this -> autor_id;
+        }
+        
+        public function obtener_url() {
+            return $this -> url;
         }
 
         public function obtener_titulo() {
@@ -47,6 +53,10 @@
 
         public function cambiar_autor_id($autor_id) {
             $this -> autor_id = $autor_id;
+        }
+        
+        public function cambiar_url($url) {
+            $this -> url = $url;
         }
 
         public function cambiar_titulo($titulo) {
