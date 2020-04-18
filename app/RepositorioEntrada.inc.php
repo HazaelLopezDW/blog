@@ -9,15 +9,17 @@
             $insertar_entrada = null;
             
             $autor_id = $entrada -> obtener_autor_id();
+            $url = $entrada -> obtener_url();
             $titulo = $entrada -> obtener_titulo();
             $texto = $entrada -> obtener_texto();
             
             if(isset($conexion)){
                 try{
                     
-                    $sql = "INSERT INTO entradas(autor_id, titulo, texto, fecha, activa) VALUES(:autor_id, :titulo, :texto, NOW(), 0)";
+                    $sql = "INSERT INTO entradas(autor_id, url, titulo, texto, fecha, activa) VALUES(:autor_id, :url, :titulo, :texto, NOW(), 0)";
                     $sentencia = $conexion -> prepare($sql);
                     $sentencia -> bindParam(":autor_id", $autor_id, PDO::PARAM_STR);
+                    $sentencia -> bindParam(":url", $url, PDO::PARAM_STR);
                     $sentencia -> bindParam(":titulo", $titulo, PDO::PARAM_STR);
                     $sentencia -> bindParam(":texto", $texto, PDO::PARAM_STR);
                     
