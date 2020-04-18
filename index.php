@@ -33,6 +33,9 @@
                 case "registro":
                     $ruta_elegida = "vistas/registro.php";
                     break;
+                case "script-relleno":
+                    $ruta_elegida = "herramientas/script-relleno.php";
+                    break;
             }
         }else if(count($partes_ruta) == 3){
             if($partes_ruta[1] == "registro-correcto"){
