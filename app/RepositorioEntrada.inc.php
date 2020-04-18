@@ -55,4 +55,25 @@
             }
             return $entradas;
         }
+        
+        public static function obtener_entrada_por_url($conexion, $url){
+            $entrada = null;
+            if(isset($conexion)){
+                try{
+                    $sql = "SELECT * FROM entradas WHERE url LIKE :url";
+                    $sentencia = $conexion -> prepare($sql);
+                    $sentencia -> bindParam(":url", $url, PDO::PARAM_STR);
+                    $sentencia -> execute();
+                    
+                    $resultado = $sentencia -> fetch();
+                    
+                    if(!empty($resultado)){
+                        $entrada = new Entrada($resultado['id'], $resultado['autor_id'], $resultado['url'], $resultado['titulo'], $resultado['texto'],
+                                $resultado['fecha'], $resultado['activa']);
+                    }
+                } catch (PDOException $ex) {
+                    print "ERROR:" . $ex -> getMessage() . "<br>";
+                }
+            }
+        }
     }
