@@ -42,6 +42,16 @@
                 $nombre = $partes_ruta[2];
                 $ruta_elegida = "vistas/registro-correcto.php";
             }
+            if($partes_ruta[1] === "entrada"){
+                $url = $partes_ruta[2];
+                
+                Conexion::abrir_conexion();
+                $entrada = RepositorioEntrada::obtener_entrada_por_url(Conexion::obtener_conexion(), $url);
+                
+                if($entrada != null){
+                    $ruta_elegida = "vistas/entrada.php";
+                }
+            }
         }
     }
     
