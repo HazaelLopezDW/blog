@@ -45,7 +45,7 @@
                     </div> 
                     <br>
                     <div class="text-center">
-                        <a class="btn btn-primary" href="#" role="button">Seguir leyendo</a>
+                        <a class="btn btn-primary" href="<?php echo RUTA_ENTRADA . "/" . $entrada -> obtener_url(); ?>" role="button">Seguir leyendo</a>
                     </div>
                 </div>
             </div>
