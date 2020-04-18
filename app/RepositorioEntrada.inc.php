@@ -75,5 +75,6 @@
                     print "ERROR:" . $ex -> getMessage() . "<br>";
                 }
             }
+            return $entrada;
         }
     }
