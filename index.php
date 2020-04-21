@@ -60,6 +60,8 @@
                 $entrada = RepositorioEntrada::obtener_entrada_por_url(Conexion::obtener_conexion(), $url);
                 
                 if($entrada != null){
+                    $autor = RepositorioUsuario::obtener_usuario_por_id(Conexion::obtener_conexion(), $entrada -> obtener_autor_id());
+                    
                     $ruta_elegida = "vistas/entrada.php";
                 }
             }
