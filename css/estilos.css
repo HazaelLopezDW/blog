@@ -56,3 +56,17 @@ body{
 .open > a {
     background-color: #265c00 !important;
 }
+
+.btn-primary{
+    background-color: #4cae4c !important;
+    border: none;
+}
+
+.bnt-primary:hover{
+    color: #F60 !important;
+}
+
+.contenido-articulo{
+    background-color: white;
+    padding: 2em;
+}
