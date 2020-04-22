@@ -45,7 +45,7 @@
                     </h4>
                 </div>
                 <div class="panel-body">
-                    <form role="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                    <form role="form" method="post" action="<?php echo RUTA_LOGIN; ?>">
                         <h2>Introduce tus datos</h2>
                         <div class="form-group">
                             <label for="email" class="sr-only">Email</label>
