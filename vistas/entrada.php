@@ -51,8 +51,12 @@
             </article>
         </div>
     </div>
+    <?php
+        include_once 'plantillas/entradas_al_azar.inc.php';
+    ?>
+    <br>
 </div>
 
 <?php
-    include_once 'plantillas/documento-cierre.inc.php';
+    include_once 'plantillas/entradas';
 ?>
