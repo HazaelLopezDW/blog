@@ -37,7 +37,7 @@
                 try{
                     include_once 'Comentario.inc.php';
                     
-                    $sql = "SELECT * FROM comentarios WHERE entreda_id = :entrada_id";
+                    $sql = "SELECT * FROM comentarios WHERE entrada_id = :entrada_id";
                     $sentencia = $conexion -> prepare($sql);
                     $sentencia -> bindParam(":entrada_id", $entrada_id, PDO::PARAM_STR);
                     $sentencia -> execute();
