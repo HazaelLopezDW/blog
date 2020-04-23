@@ -37,7 +37,7 @@
             return $this -> texto;
         }
 
-        public function obtener_techa() {
+        public function obtener_fecha() {
             return $this -> fecha;
         }
 
