@@ -48,8 +48,6 @@
                             $comentarios[] = new Comentario($fila['id'], $fila['autor_id'], $fila['entrada_id'], $fila['titulo'], $fila['texto'], 
                                     $fila['fecha']);
                         }
-                    }else{
-                        Print"Todavia no hay comentarios";
                     }
                 } catch (PDOException $ex) {
                     print "ERROR:" . $ex -> getMessage() . "<br>";
