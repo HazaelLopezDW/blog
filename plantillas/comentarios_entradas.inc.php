@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <!-- BOTON DE ACORDEON -->
-        <button class="btn btn-primary form-control" data-toogle="collapse" data-target="#comentarios">
+        <button class="btn btn-primary form-control" data-toggle="collapse" data-target="#comentarios">
             <?php
                 echo "Ver comentarios (" . count($comentarios) . ")"
             ?>
@@ -17,14 +17,14 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <?php
-                                    $comentario -> obtener_titulo();
+                                    echo $comentario -> obtener_titulo();
                                 ?>
                             </div>
                             <div class="panel-body">
                                 <div class="col-md-2">
                                     <?php echo $comentario -> obtener_autor_id(); ?>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-10">
                                     <p>
                                         <?php echo $comentario -> obtener_fecha(); ?>
                                     </p>
