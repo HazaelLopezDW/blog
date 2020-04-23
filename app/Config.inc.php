@@ -17,5 +17,5 @@
     define("RUTA_ENTRADA", SERVIDOR."entrada");
     
     //Recursos
-    define("RUTA_CSS", SERVIDOR."/css/");
-    define("RUTA_JS", SERVIDOR."/js/");
+    define("RUTA_CSS", SERVIDOR."css/");
+    define("RUTA_JS", SERVIDOR."js/");
