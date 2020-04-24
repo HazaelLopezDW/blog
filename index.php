@@ -44,6 +44,9 @@
                 case "registro":
                     $ruta_elegida = "vistas/registro.php";
                     break;
+                case "gestor":
+                    $ruta_elegida = "vistas/gestor.php";
+                    break;
                 case "script-relleno":
                     $ruta_elegida = "herramientas/script-relleno.php";
                     break;
