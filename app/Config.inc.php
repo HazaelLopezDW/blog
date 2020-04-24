@@ -16,6 +16,7 @@
     define("RUTA_REGISTRO", SERVIDOR."registro");
     define("RUTA_REGISTRO_CORRECTO", SERVIDOR."registro-correcto");
     define("RUTA_ENTRADA", SERVIDOR."entrada");
+    define("RUTA_GESTOR", SERVIDOR."gestor");
     
     //Recursos
     define("RUTA_CSS", SERVIDOR."css/");
