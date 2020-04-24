@@ -12,6 +12,7 @@
     define("RUTA_AUTORES", SERVIDOR."autores");
     define("RUTA_USUARIOS", SERVIDOR."usuarios");
     define("RUTA_LOGIN", SERVIDOR."login");
+    define("RUTA_LOGOUT", SERVIDOR."logout");
     define("RUTA_REGISTRO", SERVIDOR."registro");
     define("RUTA_REGISTRO_CORRECTO", SERVIDOR."registro-correcto");
     define("RUTA_ENTRADA", SERVIDOR."entrada");
