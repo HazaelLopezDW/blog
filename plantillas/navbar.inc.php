@@ -29,18 +29,7 @@ include_once 'app/Config.inc.php';
                     if(ControlSesion::sesion_iniciada()){
                 ?>
                 <li><a href="#"><span class="glyphicon glyphicon-user" data-hidden="true"></span><?php echo " " . $_SESSION['nombre_usuario']; ?></a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon glyphicon-dashboard" data-hidden="true"></span> Gestor
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Entradas</a></li>
-                        <li><a href="#">Comentarios</a></li>
-                        <li><a href="#">Usuarios</a></li>
-                        <li><a href="#">Favoritos</a></li>
-                    </ul>
-                </li>
+                <li><a href="<?php echo RUTA_GESTOR; ?>"><span class="glyphicon glyphicon-dashboard" data-hidden="true"></span>Gestor</a></li>
                 <li><a href="<?php echo RUTA_LOGOUT; ?>"><span class="glyphicon glyphicon-log-out" data-hidden="true"></span> Cerrar Sesión</a></li>
                 <?php
                     }else{
