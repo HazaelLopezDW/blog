@@ -19,11 +19,17 @@ include_once 'app/Config.inc.php';
             <a href="<?php echo SERVIDOR; ?>" class="navbar-brand">JavaDevOne</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="<?php echo RUTA_ENTRADAS; ?>"><span class="glyphicon glyphicon-th-list" data-hidden="true"></span> Entradas</a></li>
-                <li><a href="<?php echo RUTA_FAVORITOS; ?>"><span class="glyphicon glyphicon-star" data-hidden="true"></span> Favoritos</a></li>
-                <li><a href="<?php echo RUTA_AUTORES; ?>"><span class="glyphicon glyphicon-education" data-hidden="true"></span> Autores</a></li>
-            </ul>
+            <?php
+                if(!ControlSesion::sesion_iniciada()){
+            ?>        
+                    <ul class="nav navbar-nav">
+                        <li><a href="<?php echo RUTA_ENTRADAS; ?>"><span class="glyphicon glyphicon-th-list" data-hidden="true"></span> Entradas</a></li>
+                        <li><a href="<?php echo RUTA_FAVORITOS; ?>"><span class="glyphicon glyphicon-star" data-hidden="true"></span> Favoritos</a></li>
+                        <li><a href="<?php echo RUTA_AUTORES; ?>"><span class="glyphicon glyphicon-education" data-hidden="true"></span> Autores</a></li>
+                    </ul>
+            <?php
+                }
+            ?>    
             <ul class="nav navbar-nav navbar-right">
                 <?php
                     if(ControlSesion::sesion_iniciada()){
