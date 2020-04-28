@@ -11,15 +11,8 @@
             <h4><?php echo $cantidad_entradas_activas; ?></h4>
             <h5>Entradas publicadas</h5>
             <br>
-            <h4>24</h4>
+            <h4><?php echo $cantidad_entradas_inactivas; ?></h4>
             <h5>Borradores</h5>
-            <br>
-            <h4>1024</h4>
-            <h5>Likes</h5>
-            <br>
-            <h4>45</h4>
-            <h5>DisLikes</h5>
-            <br>
     </div>
     <div class="col-md-4 gg-elemento" id="gg-comentarios">
         <h2>
