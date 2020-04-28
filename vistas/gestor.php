@@ -7,6 +7,7 @@
     switch ($gestor_actual){
         case "":
             $cantidad_entradas_activas = RepositorioEntrada::contar_entradas_activas_usuario(Conexion::obtener_conexion(), $_SESSION['id_usuario']);
+            $cantidad_entradas_inactivas = RepositorioEntrada::contar_entradas_inactivas_usuario(Conexion::obtener_conexion(), $_SESSION['id_usuario']);
             
             include_once 'plantillas/gestor-generico.inc.php';
             break;
