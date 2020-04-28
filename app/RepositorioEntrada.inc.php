@@ -99,4 +99,27 @@
             }
             return $entradas;
         }
+        
+        public static function contar_entradas_activas_usuario($conexion, $id_usuario){
+            $total_entradas = "0";
+            
+            if(isset($conexion)){
+                try{
+                    $sql = "SELECT COUNT(*) as total_entradas FROM entradas WHERE autor_id = :autor_id AND activa = 1";
+                    $sentencia = $conexion -> prepare($sql);
+                    $sentencia -> bindParam(":autor_id", $id_usuario, PDO::PARAM_STR);
+                    $sentencia -> execute();
+                    
+                    $resultado = $sentencia -> fetch();
+                    
+                    if(!empty($resultado)){
+                        $total_entradas = $resultado["total_entradas"];
+                    }
+                } catch (PDOException $ex) {
+                    print "ERROR:" . $ex -> getMessage() . "<br>";
+                }
+            }
+            return $total_entradas;
+        }
+                
     }
