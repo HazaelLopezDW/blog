@@ -8,7 +8,7 @@
         </h2>
         <h3>Entradas</h3>
         <hr>
-            <h4>129</h4>
+            <h4><?php echo $cantidad_entradas_activas; ?></h4>
             <h5>Entradas publicadas</h5>
             <br>
             <h4>24</h4>
