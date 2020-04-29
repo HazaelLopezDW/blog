@@ -148,15 +148,15 @@
             $entradas_obtenidas =  [];
             if(isset($conexion)){
                 try{
-                    $sql = "SELECT a.id, a.autor_id, a.url, a.titulo, a.texto, a.fecha, a.activa, COUNT(b.id) AS 'cantidad_comentarios'";
-                    $sql .= "FROM entradas a";
-                    $sql .= "LEFT JOIN comentarios b ON a.id = b.entrada_id";
-                    $sql .= "WHERE a.autor_id = :autor_id";
-                    $sql .= "GROUP BY a.id";
-                    $sql .= "ORDER by a.fecha DESC";
+                    $sql = "SELECT a.id, a.autor_id, a.url, a.titulo, a.texto, a.fecha, a.activa, COUNT(b.id) AS 'cantidad_comentarios' ";
+                    $sql .= "FROM entradas a ";
+                    $sql .= "LEFT JOIN comentarios b ON a.id = b.entrada_id ";
+                    $sql .= "WHERE a.autor_id = :autor_id ";
+                    $sql .= "GROUP BY a.id ";
+                    $sql .= "ORDER by a.fecha DESC ";
                     
                     $sentencia = $conexion -> prepare($sql);
-                    $sentencia = bindParam(":autor_id", $id_usuario, PDO::PARAM_STR);
+                    $sentencia -> bindParam(":autor_id", $id_usuario, PDO::PARAM_STR);
                     $sentencia -> execute();
                     $resultado = $sentencia -> fetchAll();
                     
