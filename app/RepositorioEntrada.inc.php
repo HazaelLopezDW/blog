@@ -143,5 +143,37 @@
             }
             return $total_entradas;
         }
+        
+        public static function obtener_entradas_usuario_fecha_descendente($conexion, $id_usuario){
+            $entradas_obtenidas =  [];
+            if(isset($conexion)){
+                try{
+                    $sql = "SELECT a.id, a.autor_id, a.url, a.titulo, a.texto, a.fecha, a.activa, COUNT(b.id) AS 'cantidad_comentarios'";
+                    $sql .= "FROM entradas a";
+                    $sql .= "LEFT JOIN comentarios b ON a.id = b.entrada_id";
+                    $sql .= "WHERE a.autor_id = :autor_id";
+                    $sql .= "GROUP BY a.id";
+                    $sql .= "ORDER by a.fecha DESC";
+                    
+                    $sentencia = $conexion -> prepare($sql);
+                    $sentencia = bindParam(":autor_id", $id_usuario, PDO::PARAM_STR);
+                    $sentencia -> execute();
+                    $resultado = $sentencia -> fetchAll();
+                    
+                    if(count($resultado)){
+                        foreach ($resultado as $fila){
+                            $entradas_obtenidas[] = array(
+                                new Entrada($fila['id'], $fila['autor_id'], $fila['url'], $fila['titulo'], $fila['texto'], $fila['fecha'], $fila['activa']),
+                                $fila['cantidad_comentarios']
+                            );
+                        }
+                    }
+                } catch (PDOException $ex) {
+                    print "ERROR:" . $ex -> getMessage() . "<br>";
+                }
+            }
+            return $entradas_obtenidas;
+        }
                 
     }
+    
