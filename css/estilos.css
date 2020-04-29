@@ -76,8 +76,8 @@ body{
 }
 
 .sidebar, .gg-elemento{
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 0.50em;
+    padding-bottom: 0.25em;
 }
 
 .gg-elemento:hover{
