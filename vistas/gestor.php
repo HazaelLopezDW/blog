@@ -14,6 +14,8 @@
             include_once 'plantillas/gestor-generico.inc.php';
             break;
         case "entradas":
+            $array_entradas = RepositorioEntrada::obtener_entradas_usuario_fecha_descendente(Conexion::obtener_conexion(), $_SESSION['id_usuario']);
+            
             include_once 'plantillas/gestor-entradas.inc.php';
             break;
         case "comentarios":
