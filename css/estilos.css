@@ -101,3 +101,26 @@ body{
     background-color: #394a66;
 }
 
+.parte-gestor-entradas{
+    background-color: #e2e2e2;
+    color: #000000;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th{
+    background-color: #029ac4;
+}
+
+.table-striped > tbody > tr > td{
+    border: none;
+}
+
+.table > thead > tr > th{
+    border: none;
+}
+
+tbody:before{
+    content: "-";
+    display: block;
+    line-height: 1em;
+    color: transparent;
+}
