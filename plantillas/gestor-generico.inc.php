@@ -24,18 +24,8 @@
         </h2>
         <h3>Comentarios</h3>
         <hr>
-            <h4>129</h4>
-            <h5>Entradas publicadas</h5>
-            <br>
-            <h4>24</h4>
-            <h5>Borradores</h5>
-            <br>
-            <h4>1024</h4>
-            <h5>Likes</h5>
-            <br>
-            <h4>45</h4>
-            <h5>DisLikes</h5>
-            <br>
+            <h4><?php echo $cantidad_comentarios; ?></h4>
+            <h5>Comentarios Escritos</h5>
     </div>
     <div class="col-md-4 gg-elemento" id="gg-favoritos">
         <h2>
@@ -44,17 +34,10 @@
             </svg>
         </h2>
         <h3>Favoritos</h3>
-        <hr><h4>129</h4>
-            <h5>Entradas publicadas</h5>
+        <hr><h4>-</h4>
+            <h5>Entradas Favoritas</h5>
             <br>
-            <h4>24</h4>
-            <h5>Borradores</h5>
-            <br>
-            <h4>1024</h4>
-            <h5>Likes</h5>
-            <br>
-            <h4>45</h4>
-            <h5>DisLikes</h5>
-            <br>
-    </div>
+            <h4>-</h4>
+            <h5>Autores Favoritos</h5>
+    </div>   
 </div>
