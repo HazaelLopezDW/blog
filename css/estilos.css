@@ -128,3 +128,8 @@ tbody:before{
 #btn-nueva-entrada:hover{
     background-color: #2b2b2b !important;
 }
+
+.form-nueva-entrada{
+    background-color: white;
+    padding: 2em;
+}
