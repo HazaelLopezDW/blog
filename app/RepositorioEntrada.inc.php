@@ -174,6 +174,30 @@
             }
             return $entradas_obtenidas;
         }
+        
+        public static function titulo_existe($conexion, $titulo){
+            $titulo_existe = true;
+            
+            if(isset($conexion)){
+                try{
+                    $sql = "SELECT * FROM entradas WHERE titulo = :titulo";
+                    $sentencia = $conexion -> prepare($sql);
+                    $sentencia -> bindParam(":titulo", $titulo, PDO::PARAM_STR);
+                    $sentencia -> execute();
+                    
+                    $resultado = $sentencia -> fetchAll();
+                    
+                    if(count($resultado)){
+                        $titulo_existe = true;
+                    }else{
+                        $titulo_existe = false;
+                    }
+                } catch (PDOException $ex) {
+                    print "ERROR:" . $ex -> getMessage() . "<br>";
+                }
+            }
+            return $titulo_existe;
+        }
                 
     }
     
