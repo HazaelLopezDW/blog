@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="contenido">Contenido</label>
-                    <textarea id="contenido" class="form-control" rows="10"></textarea>
+                    <textarea id="contenido" class="form-control" rows="5"></textarea>
                 </div>
                 <div class="checkbox">
                     <label><input type="checkbox" value="publica">Marca este recuadro si quieres que la entrada se publique de inmediato</label>
