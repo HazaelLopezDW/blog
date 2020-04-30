@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <h1>Gestión de entradas</h1>
         <br>
-        <a href="#" class="btn btn-lg btn-primary" role="button" id="btn-nueva-entrada">Crear Entrada</a>
+        <a href="<?php echo RUTA_NUEVA_ENTRADA; ?>" class="btn btn-lg btn-primary" role="button" id="btn-nueva-entrada">Crear Entrada</a>
         <br><br>
     </div>
 </div>
