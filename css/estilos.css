@@ -124,3 +124,7 @@ tbody:before{
     line-height: 1em;
     color: transparent;
 }
+
+#btn-nueva-entrada:hover{
+    background-color: #2b2b2b !important;
+}
