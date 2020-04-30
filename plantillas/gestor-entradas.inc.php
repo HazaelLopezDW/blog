@@ -1,6 +1,8 @@
 <div class="row parte-gestor-entradas">
     <div class="col-md-12">
         <h1>Gestión de entradas</h1>
+        <br>
+        <a href="#" class="btn btn-lg btn-primary" role="button" id="btn-nueva-entrada">Crear Entrada</a>
         <br><br>
     </div>
 </div>
