@@ -30,7 +30,10 @@
                         <td><?php echo $entrada_actual -> obtener_titulo(); ?></td>
                         <td><?php echo $entrada_actual -> obtener_activa(); ?></td>
                         <td><?php echo $comentarios_entrada_actual; ?></td>
-                        <td>bla bla</td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-xs">Editar</button>
+                            <button type="button" class="btn btn-default btn-xs">Borrar</button>
+                        </td>
                     </tr>
                     <?php
                         }
