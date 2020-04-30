@@ -51,6 +51,9 @@
                 case "script-relleno":
                     $ruta_elegida = "herramientas/script-relleno.php";
                     break;
+                case "nueva-entrada":
+                    $ruta_elegida = "herramientas/nueva-entrada.php";
+                    break;
             }
         }else if(count($partes_ruta) == 3){
             if($partes_ruta[1] == "registro-correcto"){
