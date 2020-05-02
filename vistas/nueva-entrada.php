@@ -32,8 +32,6 @@
         }
     }
     
-    include_once '';
-    
     $titulo = "Nueva Entrada del blog";
     
      include_once 'plantillas/documento-inicio.inc.php';
