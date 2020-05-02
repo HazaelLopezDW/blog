@@ -50,25 +50,13 @@
     <div class="row">
         <div class="col-md-12">
             <form class="form-nueva-entrada" role="form" method="post" action="<?php echo RUTA_NUEVA_ENTRADA; ?>"> 
-                <div class="form-group">
-                    <label for="titulo">Titulo</label>
-                    <input id="titulo" type="text" class="form-control" name="titulo" placeholder="Ponle un titulo a esta entrada">
-                </div>
-                <div class="form-group">
-                    <label for="url">URL</label>
-                    <input id="url" type="text" class="form-control" name="url" placeholder="Dereccion unica sin espacios para la entrada">
-                </div>
-                <div class="form-group">
-                    <label for="contenido">Contenido</label>
-                    <textarea id="contenido" class="form-control" rows="5" name="texto" placeholder="Escribe aquí tu articulo"></textarea>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="publicar" value="si">Marca este recuadro si quieres que la entrada se publique de inmediato
-                    </label>
-                </div>
-                <br>
-                <button type="submit" class="btn btn-default btn-primary" name="guardar">Guaradar Entrada</button>
+                <?php 
+                    if(isset($_POST['guardar'])){
+                        include_once 'plantillas/form_nueva_entrada_validado.inc.php';
+                    }else{
+                        include_once 'plantillas/form_nueva_entrada_vacio.inc.php';
+                    }
+                ?>
             </form>
         </div>
     </div>
