@@ -59,7 +59,10 @@ include_once 'RepositorioEntrada.inc.php';
                 $this -> url = $url;
             }
             
-            if(strlen($url) != strlen(trim($url))){
+            $url_tratada = str_replace(' ', '', $url);
+            $urñ_tratada = preg_replace('/\s+/', '', $url_tratada);
+            
+            if(strlen($url) != strlen($url_tratada)){
                 return "La URL no puede tener espacios";
             }
             
