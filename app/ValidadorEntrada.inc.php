@@ -15,7 +15,7 @@ include_once 'RepositorioEntrada.inc.php';
         private $error_texto;
         
         public function __construct($titulo,$url, $texto, $conexion){
-            $this -> aviso_inicio = "<br><div role='alert' class='alert alert-danger'";
+            $this -> aviso_inicio = "<br><div role='alert' class='alert alert-danger'>";
             $this -> aviso_cierre = "</div>";
             
             $this -> titulo = "";
@@ -110,19 +110,19 @@ include_once 'RepositorioEntrada.inc.php';
         
         
         public function mostrar_error_titulo(){
-            if(!$this -> error_titulo != ""){
+            if($this -> error_titulo != ""){
                 echo $this -> aviso_inicio . $this -> error_titulo . $this -> aviso_cierre;
             }
         }
         
         public function mostrar_error_url(){
-            if(!$this -> error_url != ""){
+            if($this -> error_url != ""){
                 echo $this -> aviso_inicio . $this -> error_url . $this -> aviso_cierre;
             }
         }
         
         public function mostrar_error_texto(){
-            if(!$this -> error_texto != ""){
+            if($this -> error_texto != ""){
                 echo $this -> aviso_inicio . $this -> error_texto . $this -> aviso_cierre;
             }
         }
