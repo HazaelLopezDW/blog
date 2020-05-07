@@ -34,7 +34,10 @@
                         <td><?php echo $entrada_actual -> obtener_activa(); ?></td>
                         <td><?php echo $comentarios_entrada_actual; ?></td>
                         <td>
-                            <button type="button" class="btn btn-default btn-xs">Editar</button>
+                            <form role="form" method="post" action="<?php echo RUTA_EDITAR_ENTRADA; ?>">
+                                <input type="hidden" name="id_editar" value="<?php echo $entrada_actual -> obtener_id(); ?>">
+                                <button type="submit" class="btn btn-default btn-xs" name="editar_entrada">Editar</button>
+                            </form>
                         </td>
                         <td>
                             <form role="form" method="post" action="<?php echo RUTA_BORRAR_ENTRADA; ?>">
