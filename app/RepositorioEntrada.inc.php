@@ -16,12 +16,20 @@
             if(isset($conexion)){
                 try{
                     
-                    $sql = "INSERT INTO entradas(autor_id, url, titulo, texto, fecha, activa) VALUES(:autor_id, :url, :titulo, :texto, NOW(), 0)";
+                    $sql = "INSERT INTO entradas(autor_id, url, titulo, texto, fecha, activa) VALUES(:autor_id, :url, :titulo, :texto, NOW(), :activa)";
+                    
+                    $activa = 0;
+                    
+                    if($entrada -> esta_activa()){
+                        $activa =1;
+                    }
+                    
                     $sentencia = $conexion -> prepare($sql);
                     $sentencia -> bindParam(":autor_id", $autor_id, PDO::PARAM_STR);
                     $sentencia -> bindParam(":url", $url, PDO::PARAM_STR);
                     $sentencia -> bindParam(":titulo", $titulo, PDO::PARAM_STR);
                     $sentencia -> bindParam(":texto", $texto, PDO::PARAM_STR);
+                    $sentencia -> bindParam(":activa", $activa, PDO::PARAM_STR);
                     
                     $insertar_entrada = $sentencia -> execute();
                 } catch (PDOException $ex) {
