@@ -57,6 +57,9 @@
                 case "borrar-entrada":
                     $ruta_elegida = "scripts/borrar-entrada.php";
                     break;
+                case "editar-entrada":
+                    $ruta_elegida = "vistas/editar-entrada";
+                    break;
             }
         }else if(count($partes_ruta) == 3){
             if($partes_ruta[1] == "registro-correcto"){
