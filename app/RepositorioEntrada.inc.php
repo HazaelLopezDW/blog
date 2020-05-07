@@ -20,7 +20,7 @@
                     
                     $activa = 0;
                     
-                    if($entrada -> esta_activa()){
+                    if($entrada -> obtener_activa()){
                         $activa =1;
                     }
                     
